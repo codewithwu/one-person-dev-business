@@ -1,0 +1,17 @@
+{
+  "name": "one-person-dev-business",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx site/build.ts && serve dist -l 3000",
+    "build": "tsx site/build.ts",
+    "preview": "serve dist"
+  },
+  "devDependencies": {
+    "marked": "^15.0.0",
+    "serve": "^14.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

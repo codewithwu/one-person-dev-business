@@ -1,0 +1,158 @@
+/* ============================================
+   程序员一人公司实战指南 — Design System
+   Warm Paper Book Aesthetic
+   ============================================ */
+
+/* CSS Custom Properties */
+:root {
+  /* Background tones — layered paper */
+  --bg-page:        #F5F0E8;
+  --bg-surface:     #FDFAF5;
+  --bg-sidebar:     #EDE8DD;
+  --bg-accent:      #D4C5A9;
+
+  /* Text */
+  --text-primary:   #2C2418;
+  --text-secondary: #6B5D4D;
+  --text-muted:     #9B8B78;
+  --text-inverse:   #FDFAF5;
+
+  /* Accent */
+  --accent:         #8B4513;
+  --accent-light:   #C4956A;
+  --accent-dark:    #5C2E0A;
+
+  /* Borders and dividers */
+  --border:         #D9D0C3;
+  --border-strong:  #B8A894;
+
+  /* Part colors */
+  --part-1:         #7B6B5A;
+  --part-2:         #6B7B5A;
+  --part-3:         #5A6B7B;
+  --part-4:         #7B5A6B;
+
+  /* Spacing scale */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2rem;
+  --space-2xl:  3rem;
+  --space-3xl:  4rem;
+  --space-4xl:  6rem;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 2px rgba(44, 36, 24, 0.06);
+  --shadow-md:  0 4px 12px rgba(44, 36, 24, 0.08);
+  --shadow-lg:  0 8px 30px rgba(44, 36, 24, 0.12);
+
+  /* Transitions */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --duration:   0.3s;
+
+  /* Sidebar width */
+  --sidebar-width: 280px;
+  --header-height: 56px;
+
+  /* Content */
+  --content-max-width: 720px;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'LXGW WenKai', Georgia, 'Times New Roman', serif;
+  font-size: var(--text-base, 1.125rem);
+  line-height: 1.8;
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease-out);
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-light);
+  color: var(--text-inverse);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-light);
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

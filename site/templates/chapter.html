@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} - 程序员一人公司实战指南</title>
+  <meta name="description" content="{{title}} — 程序员一人公司实战指南">
+  <meta property="og:title" content="{{title}} - 程序员一人公司实战指南">
+  <meta property="og:description" content="{{title}} — 程序员一人公司实战指南">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="{{base}}assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{base}}assets/main.css">
+</head>
+<body>
+
+  <!-- Reading progress bar -->
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <div class="site-layout">
+
+    <!-- Header -->
+    <header class="site-header">
+      <button class="hamburger" id="hamburger" aria-label="打开导航">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="{{base}}" class="book-title">程序员一人公司实战指南</a>
+      <div class="part-indicator">
+        <span class="part-dot" style="background-color: var(--part-{{part_id}})"></span>
+        <span>{{part_name}}</span>
+      </div>
+    </header>
+
+    <!-- Sidebar overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      {{sidebar_html}}
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <article class="prose">
+          {{content}}
+        </article>
+
+        <!-- Chapter navigation -->
+        <nav class="chapter-nav">
+          {{prev_link}}
+          {{next_link}}
+        </nav>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>《程序员一人公司实战指南》 &copy; 2026 copper</p>
+      <p><a href="https://github.com/user/one-person-dev-business" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+
+  </div>
+
+  <script type="module" src="{{base}}assets/main.js"></script>
+</body>
+</html>

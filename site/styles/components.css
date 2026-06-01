@@ -1,0 +1,337 @@
+/* ============================================
+   Components — Cards, Navigation, Landing
+   ============================================ */
+
+/* ---- Landing Page ---- */
+
+.landing-hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-4xl) var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--border-strong));
+}
+
+.landing-book-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(2.5rem, 6vw, var(--text-4xl));
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.05em;
+}
+
+.landing-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+}
+
+.landing-author {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3xl);
+  letter-spacing: 0.15em;
+}
+
+.landing-cta {
+  display: inline-block;
+  padding: var(--space-md) var(--space-2xl);
+  background-color: var(--accent);
+  color: var(--text-inverse);
+  font-family: 'Noto Serif SC', serif;
+  font-size: var(--text-base);
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all var(--duration) var(--ease-out);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-out);
+}
+
+.landing-cta:hover {
+  background-color: var(--accent-dark);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.landing-cta:hover::after {
+  transform: translateX(100%);
+}
+
+/* Landing parts overview */
+.landing-parts {
+  padding: var(--space-3xl) var(--space-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.landing-parts-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: var(--text-2xl);
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  color: var(--text-primary);
+}
+
+/* Part section on landing */
+.part-section {
+  margin-bottom: var(--space-3xl);
+}
+
+.part-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+.part-number {
+  font-family: 'Noto Serif SC', serif;
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.part-name {
+  font-family: 'Noto Serif SC', serif;
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+.part-subtitle {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Chapter cards */
+.chapter-card {
+  display: block;
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-sm);
+  border-radius: 6px;
+  transition: all var(--duration) var(--ease-out);
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.chapter-card:hover {
+  background-color: var(--bg-surface);
+  border-left-color: var(--accent-light);
+  transform: translateX(4px);
+}
+
+.chapter-card-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.chapter-card:hover .chapter-card-title {
+  color: var(--accent);
+}
+
+/* ---- TOC Page ---- */
+
+.toc-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+.toc-page-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+
+.toc-page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.toc-part {
+  margin-bottom: var(--space-3xl);
+}
+
+.toc-part-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+}
+
+.toc-part-number {
+  font-family: 'Noto Serif SC', serif;
+  font-size: var(--text-2xl);
+  font-weight: 900;
+}
+
+.toc-part-name {
+  font-family: 'Noto Serif SC', serif;
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+.toc-chapter-link {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-xs);
+  border-radius: 4px;
+  transition: all var(--duration) var(--ease-out);
+  text-decoration: none;
+}
+
+.toc-chapter-link:hover {
+  background-color: var(--bg-surface);
+}
+
+.toc-chapter-title {
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.toc-chapter-link:hover .toc-chapter-title {
+  color: var(--accent);
+}
+
+/* ---- Part color accents ---- */
+
+.part-1 .part-number,
+.part-1 .toc-part-number { color: var(--part-1); }
+.part-2 .part-number,
+.part-2 .toc-part-number { color: var(--part-2); }
+.part-3 .part-number,
+.part-3 .toc-part-number { color: var(--part-3); }
+.part-4 .part-number,
+.part-4 .toc-part-number { color: var(--part-4); }
+
+.part-1 .part-header { border-bottom-color: var(--part-1); }
+.part-2 .part-header { border-bottom-color: var(--part-2); }
+.part-3 .part-header { border-bottom-color: var(--part-3); }
+.part-4 .part-header { border-bottom-color: var(--part-4); }
+
+/* ---- Entrance animations ---- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.landing-hero .landing-book-title {
+  animation: fadeInUp 0.8s var(--ease-out) both;
+}
+
+.landing-hero .landing-subtitle {
+  animation: fadeInUp 0.8s var(--ease-out) 0.15s both;
+}
+
+.landing-hero .landing-author {
+  animation: fadeInUp 0.8s var(--ease-out) 0.3s both;
+}
+
+.landing-hero .landing-cta {
+  animation: fadeInUp 0.8s var(--ease-out) 0.45s both;
+}
+
+/* Prose entrance */
+.prose {
+  animation: fadeIn 0.6s var(--ease-out) both;
+}
+
+/* ---- Print styles ---- */
+
+@media print {
+  .sidebar,
+  .site-header,
+  .reading-progress,
+  .chapter-nav,
+  .hamburger,
+  .sidebar-overlay {
+    display: none !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+
+  .prose {
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .prose a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .prose a::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    color: #666;
+  }
+}
